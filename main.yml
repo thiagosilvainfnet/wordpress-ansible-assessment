@@ -1,0 +1,7 @@
+---
+- hosts: wordpress_servers
+  become: yes
+  roles:
+    - install_req
+    - install_docker_ce
+    - install_wordpress

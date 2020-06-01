@@ -1,0 +1,17 @@
+---
+  - name: "Criando e Executando o Container MySQL"
+    docker_container:
+      name: banco
+      image: mysql:5.6
+      env:
+        MYSQL_ROOT_PASSWORD: senha123
+  - name: "Criando Executando o Container WordPress"
+    docker_container:
+      name: wordpress
+      image: wordpress
+      links:
+        - "banco:mysql"
+      ports:
+        - "80:80"
+
+      
